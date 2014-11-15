@@ -1,0 +1,13 @@
+compile
+test
+container:start
+exit
+compile
+run
+test
+container:start
+container:stop
+exit
+compile
+container:start
+exit

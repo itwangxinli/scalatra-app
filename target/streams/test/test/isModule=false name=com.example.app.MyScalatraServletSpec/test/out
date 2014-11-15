@@ -1,0 +1,4 @@
+[0m[[0minfo[0m] [0mMyScalatraServletSpec[37mGET / on MyScalatraServlet[0m[32m+[0m should return status 200[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0mTotal for specification MyScalatraServletSpec[0m
+[0m[[0minfo[0m] [0m[36mFinished in 932 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m1 example, 0 failure, 0 error[0m[0m
