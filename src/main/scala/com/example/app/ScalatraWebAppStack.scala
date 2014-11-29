@@ -34,4 +34,5 @@ trait ScalatraWebAppStack extends ScalatraServlet with ScalateSupport {
       layoutTemplate(path)
     } orElse serveStaticResource() getOrElse resourceNotFound()
   }
+  override def error(handler: ErrorHandler): Unit = super.error(handler)
 }

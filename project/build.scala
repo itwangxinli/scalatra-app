@@ -20,7 +20,8 @@ object ScalatraWebAppBuild extends Build {
       name := Name,
       version := Version,
       scalaVersion := ScalaVersion,
-      resolvers += Classpaths.typesafeReleases,
+      resolvers += Classpaths.typesafeReleases+
+      "oschina" at " http://maven.oschina.net/content/groups/public/",
       libraryDependencies ++= Seq(
         "org.scalatra" %% "scalatra" % ScalatraVersion exclude("org.slf4j", "slf4j-api"),
         "org.scalatra" %% "scalatra-scalate" % ScalatraVersion exclude("org.slf4j", "slf4j-api"),
@@ -28,7 +29,12 @@ object ScalatraWebAppBuild extends Build {
         "ch.qos.logback" % "logback-classic" % "1.1.2" % "compile",
         "org.eclipse.jetty" % "jetty-webapp" % "9.1.5.v20140505" % "container",
         "org.eclipse.jetty" % "jetty-plus" % "9.1.5.v20140505" % "container",
-        "javax.servlet" % "javax.servlet-api" % "3.1.0"
+        "javax.servlet" % "javax.servlet-api" % "3.1.0",
+        "org.squeryl" %% "squeryl" % "0.9.5-7",
+      "mysql" % "mysql-connector-java" % "5.1.27",
+        "com.h2database" % "h2" % "1.3.166",
+        "c3p0" % "c3p0" % "0.9.1.2",
+        "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "container;provided;test" artifacts (Artifact("javax.servlet", "jar", "jar"))
       ),
       scalateTemplateConfig in Compile <<= (sourceDirectory in Compile) { base =>
         Seq(

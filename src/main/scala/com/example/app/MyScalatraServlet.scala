@@ -13,5 +13,6 @@ class MyScalatraServlet extends ScalatraWebAppStack {
       </body>
     </html>
   }
-  
+
+
 }
