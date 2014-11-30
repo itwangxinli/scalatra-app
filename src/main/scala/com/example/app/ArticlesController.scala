@@ -6,10 +6,9 @@ import org.scalatra._
 import org.scalatra.scalate.ScalateSupport
 import org.squeryl.PrimitiveTypeMode._
 
-class ArticlesController extends ScalatraServlet
+class ArticlesController extends ScalatraWebAppStack
 with SessionSupport
 with DatabaseSessionSupport
-with ScalateSupport
 with MethodOverride
 with FlashMapSupport {
 
@@ -17,7 +16,9 @@ with FlashMapSupport {
     contentType = "text/html"
 
     val articles = from(BlogDb.articles)(select(_))
-    ssp("/articles/index.ssp", "articles" -> articles)
+
+    ssp("articles/index", "articles" -> articles)
+
   }
 
   val newArticle = get("/articles/new") {

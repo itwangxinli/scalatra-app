@@ -23,8 +23,8 @@ object ScalatraWebAppBuild extends Build {
       resolvers += Classpaths.typesafeReleases+
       "oschina" at " http://maven.oschina.net/content/groups/public/",
       libraryDependencies ++= Seq(
-        "org.scalatra" %% "scalatra" % ScalatraVersion exclude("org.slf4j", "slf4j-api"),
-        "org.scalatra" %% "scalatra-scalate" % ScalatraVersion exclude("org.slf4j", "slf4j-api"),
+        "org.scalatra" %% "scalatra" % ScalatraVersion exclude("org.slf4j", "slf4j-api") withSources(),
+        "org.scalatra" %% "scalatra-scalate" % ScalatraVersion exclude("org.slf4j", "slf4j-api") withSources(),
         "org.scalatra" %% "scalatra-specs2" % ScalatraVersion % "test",
         "ch.qos.logback" % "logback-classic" % "1.1.2" % "compile",
         "org.eclipse.jetty" % "jetty-webapp" % "9.1.5.v20140505" % "container",
