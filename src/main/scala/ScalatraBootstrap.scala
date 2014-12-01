@@ -6,6 +6,7 @@ import javax.servlet.ServletContext
 class ScalatraBootstrap extends LifeCycle with DatabaseInit {
   override def init(context: ServletContext) {
     configureDb()
+    context mount (new FlowerController, "/flower")
     context mount (new ArticlesController, "/*")
   }
 

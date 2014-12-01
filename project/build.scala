@@ -34,6 +34,8 @@ object ScalatraWebAppBuild extends Build {
       "mysql" % "mysql-connector-java" % "5.1.27",
         "com.h2database" % "h2" % "1.3.166",
         "c3p0" % "c3p0" % "0.9.1.2",
+        "org.scalatra" %% "scalatra-json" % ScalatraVersion,
+        "org.json4s"   %% "json4s-jackson" % "3.2.9",
         "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "container;provided;test" artifacts (Artifact("javax.servlet", "jar", "jar"))
       ),
       scalateTemplateConfig in Compile <<= (sourceDirectory in Compile) { base =>
