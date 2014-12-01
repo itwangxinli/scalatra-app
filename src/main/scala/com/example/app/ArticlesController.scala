@@ -7,8 +7,8 @@ import org.scalatra.scalate.ScalateSupport
 import org.squeryl.PrimitiveTypeMode._
 
 class ArticlesController extends ScalatraWebAppStack
-with SessionSupport
 with DatabaseSessionSupport
+with SessionSupport
 with MethodOverride
 with FlashMapSupport {
 
