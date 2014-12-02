@@ -22,9 +22,9 @@ trait DatabaseSessionSupport {
 
   val logger = LoggerFactory.getLogger(getClass);
 
-  def dbSession ={
-    logger.info("request key [{}]",key);
-   request.get(key).orNull.asInstanceOf[Session]}
+  def dbSession = {
+    request.get(key).orNull.asInstanceOf[Session]
+  }
 
 
   before() {
