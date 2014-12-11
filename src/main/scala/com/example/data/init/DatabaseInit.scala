@@ -1,8 +1,8 @@
 package com.example.data.init
 
+import com.example.study.MySqlUtf8Adapter
 import com.mchange.v2.c3p0.ComboPooledDataSource
 import org.slf4j.LoggerFactory
-import org.squeryl.adapters.H2Adapter
 import org.squeryl.{Session, SessionFactory}
 
 
@@ -11,8 +11,9 @@ trait DatabaseInit {
 
 
   val databaseUsername = "root"
-  val databasePassword = ""
-  val databaseConnection = "jdbc:h2:mem:squeryltryout"
+  val databasePassword = "derbysoft"
+  val databaseConnection = "jdbc:mysql://127.0.0.1:3306/squeryl?useUnicode=true&characterEncoding=utf8&autoReconnect=true"
+  val dataBaseDriver = "com.mysql.jdbc.Driver"
 
   var cpds = new ComboPooledDataSource
 
@@ -29,8 +30,7 @@ trait DatabaseInit {
     SessionFactory.concreteFactory = Some(() => connection)
 
     def connection = {
-      logger.info("Creating connection with c3po connection pool")
-      Session.create(cpds.getConnection, new H2Adapter)
+      Session.create(cpds.getConnection, new MySqlUtf8Adapter)
     }
   }
 

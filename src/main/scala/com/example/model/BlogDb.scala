@@ -25,19 +25,23 @@ object BlogDb extends Schema {
   val articles = table[Article]("articles")
 
   on(articles)(a => declare(
-    a.id is(autoIncremented)
+    a.id is (autoIncremented),
+    a.body is (indexed("abody"))
   ))
+
 
 }
 
-object Article {
+object Article extends {
 
-  def create(article:Article):Boolean = {
+  def create(article: Article): Boolean = {
     inTransaction {
       val result = BlogDb.articles.insert(article)
+
       result.isPersisted
     }
   }
+
 }
 
 /**
@@ -45,8 +49,6 @@ object Article {
  * models so that we have a single point of change if we want to add
  * anything to our model behaviour
  */
-trait ScalatraRecord extends KeyedEntity[Long] with PersistenceStatus {
-
-}
+trait ScalatraRecord extends KeyedEntity[Long] with PersistenceStatus {}
 
 
