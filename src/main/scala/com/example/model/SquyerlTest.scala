@@ -28,7 +28,7 @@ object SquyerlTest extends DatabaseInit {
   def initDB(): Unit = {
     Library.drop
     Library.create
-    Library.printDdl
+    Library.printDdl(println(_))
     val batche = List(new Author(23, "韩", "寒", Some("wangxinli@gmail.com")), new Author(23, "汪", "心利", Some("zhangsans@gmail.com")));
     val books = List(new Book(0, "红岭新闻乱播", 1, None), new Book(0, "红岭新闻乱播2", 1, None), new Book(0, "数据结构预算法分析", 2, None))
     inTransaction {
