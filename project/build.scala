@@ -30,6 +30,7 @@ object ScalatraWebAppBuild extends Build {
         "org.eclipse.jetty" % "jetty-webapp" % "9.1.5.v20140505" % "container",
         "org.eclipse.jetty" % "jetty-plus" % "9.1.5.v20140505" % "container",
         "javax.servlet" % "javax.servlet-api" % "3.1.0",
+        "org.apache.commons" % "commons-lang3" % "3.3",
         "org.squeryl" %% "squeryl" % "0.9.5-7" withSources(),
         "mysql" % "mysql-connector-java" % "5.1.27",
         "com.h2database" % "h2" % "1.3.166",

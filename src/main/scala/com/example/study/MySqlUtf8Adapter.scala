@@ -1,7 +1,7 @@
 package com.example.study
 
 import org.squeryl.{Schema, Table}
-import org.squeryl.adapters.{MySQLInnoDBAdapter, MySQLAdapter}
+import org.squeryl.adapters.{MySQLInnoDBAdapter}
 import org.squeryl.internals.StatementWriter
 
 
